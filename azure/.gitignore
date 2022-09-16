@@ -3,8 +3,8 @@
 
 # macOS
 .DS_Store
-*/.DS.Store
-*.DS.Store*
+*/.DS_Store
+*.DS_Store
 
 # Stuff I don't want pushed to github
 tests/*

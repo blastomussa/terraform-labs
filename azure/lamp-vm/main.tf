@@ -119,12 +119,6 @@ resource "azurerm_storage_account" "my_storage_account" {
   account_replication_type = "LRS"
 }
 
-# Create (and display) an SSH key
-resource "tls_private_key" "example_ssh" {
-  algorithm = "RSA"
-  rsa_bits  = 4096
-}
-
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
   name                  = "myVM"
@@ -171,7 +165,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
   provisioner "remote-exec" {
     inline = [
       "sudo apt-get update",
-      "sudo apt install -y lamp-server^"
+      "sudo apt-get install -y lamp-server^"
     ]
   }
 }
