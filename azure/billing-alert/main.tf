@@ -31,7 +31,7 @@ resource "azurerm_consumption_budget_subscription" "alert" {
     operator  = "EqualTo"
 
     contact_emails = [
-      "jccourtn@gmail.com"
+      "test@example.com"
     ]
   }
 }
