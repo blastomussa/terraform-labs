@@ -162,10 +162,5 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
     agent       = false
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get update",
-      "sudo apt-get install -y lamp-server^"
-    ]
-  }
+  custom_data = filebase64("customdata.tpl")
 }
