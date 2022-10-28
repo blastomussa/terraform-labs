@@ -17,6 +17,9 @@ tests/*
 */terraform.*
 terraform.*
 *.terraform.*
+*/*/.terraform/*
+/azure/hub-spoke/.terraform/*
+azure/hub-spoke/.terraform
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
