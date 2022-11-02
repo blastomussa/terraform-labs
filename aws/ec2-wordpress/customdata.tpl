@@ -50,6 +50,7 @@ sudo a2dissite 000-default
 # reload apache
 sudo service apache2 reload
 
+# NOT WORKING QUITE RIGHT
 sudo mysql -u root --execute="CREATE DATABASE wordpress; CREATE USER wordpress@localhost IDENTIFIED BY ${password}; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost; FLUSH PRIVILEGES;"
 
 # enable mysql
@@ -57,5 +58,9 @@ sudo service mysql start
 
 #copy the sample configuration file to wp-config.php
 sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
+
+sudo -u www-data sed -i 's/database_name_here/wordpress/' /srv/www/wordpress/wp-config.php
+sudo -u www-data sed -i 's/username_here/wordpress/' /srv/www/wordpress/wp-config.php
+sudo -u www-data sed -i "s/password_here/${password}/" /srv/www/wordpress/wp-config.php
 
 # still requires additional configuration via ssh: https://ubuntu.com/tutorials/install-and-configure-wordpress#6-configure-wordpress-to-connect-to-the-database
