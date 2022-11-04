@@ -7,7 +7,7 @@ resource "mongodbatlas_cluster" "cluster" {
   # provider
   provider_name               = "TENANT"
   backing_provider_name       = var.cloud_provider
-  provider_region_name        = var.regions
+  provider_region_name        = var.region
 
   # size; free tier requires TENANT provider
   provider_instance_size_name = "M0"
