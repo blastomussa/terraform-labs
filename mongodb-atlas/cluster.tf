@@ -16,7 +16,7 @@ resource "mongodbatlas_cluster" "cluster" {
   cloud_backup                 = false
   auto_scaling_disk_gb_enabled = false
   provider_name                = var.cloud_provider
-  provider_instance_size_name  = "M10"
+  provider_instance_size_name  = "M0"
 }
 output "connection_strings" {
   value = mongodbatlas_cluster.cluster.connection_strings
