@@ -30,4 +30,5 @@ resource "aws_route_table" "route-table-lab-env" {
 resource "aws_route_table_association" "subnet-association" {
   subnet_id      = aws_subnet.subnet_1.id
   route_table_id = aws_route_table.route-table-lab-env.id
+  
 }
