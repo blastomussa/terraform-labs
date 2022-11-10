@@ -36,6 +36,13 @@ resource "aws_s3_bucket_website_configuration" "lab_website" {
   }
 }
 
+resource "aws_s3_object" "gif" {
+  bucket = aws_s3_bucket.lab_bucket.bucket
+  key = "github.gif"
+  source = "github.gif"
+  acl    = "public-read"
+}
+
 resource "aws_s3_object" "index" {
   bucket = aws_s3_bucket.lab_bucket.bucket
   key    = "index.html"
@@ -50,13 +57,6 @@ resource "aws_s3_object" "error" {
   source = "404.html"
   acl    = "public-read"
   content_type = "text/html"
-}
-
-resource "aws_s3_object" "gif" {
-  bucket = aws_s3_bucket.lab_bucket.bucket
-  key = "github.gif"
-  source = "github.gif"
-  acl    = "public-read"
 }
 
 
