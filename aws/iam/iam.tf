@@ -2,7 +2,6 @@
 resource "aws_iam_user" "demo" {
   name = "demo"
   force_destroy = true
-  
 }
 
 # demo user access key
